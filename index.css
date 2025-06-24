@@ -1,0 +1,682 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(135deg, #0a0a23 0%, #1a1a3e 25%, #2d1b4e 50%, #1a1a3e 75%, #0a0a23 100%);
+            color: #d4af37;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Magical Background Effects */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        /* Flying Broomsticks */
+        .broomstick {
+            position: absolute;
+            font-size: 24px;
+            color: #8B4513;
+            animation: flyAcross 12s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes flyAcross {
+            0% {
+                left: -100px;
+                top: 50%;
+                transform: rotate(25deg);
+            }
+
+            25% {
+                left: 25%;
+                top: 75%;
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                left: 50%;
+                top: 75%;
+                transform: rotate(20deg);
+            }
+
+            75% {
+                left: 75%;
+                top: 10%;
+                transform: rotate(-10deg);
+            }
+
+            100% {
+                left: calc(100% + 100px);
+                top: 20%;
+                transform: rotate(5deg);
+            }
+        }
+
+        /* Hogwarts Houses */
+        .house-crests {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            /* Keep this */
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .house-group-left {
+            position: relative;
+            left: 200px;
+            top: 300px;
+            display: grid;
+            gap: 100px;
+            /* Space between the two left houses */
+
+        }
+
+        .house-group-right {
+            position: relative;
+            right: 200px;
+            top: 300px;
+            display: grid;
+            gap: 100px;
+            /* Space between the two left houses */
+        }
+
+        .house-crest {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            animation: housePulse 4s ease-in-out infinite;
+            backdrop-filter: blur(5px);
+            /* border: 2px solid rgba(255, 255, 255, 0.2); */
+        }
+
+        .house-crest gryffindor {
+            size: 100px;
+        }
+
+        .gryffindor {
+            /* background: linear-gradient(135deg, rgba(116, 0, 1, 0.9), rgba(255, 205, 0, 0.9));*/
+            color: #c98819;
+            background: transparent;
+        }
+
+        .hufflepuff {
+            /* background: linear-gradient(135deg, rgba(255, 205, 0, 0.9), rgba(0, 0, 0, 0.9)); */
+            background: transparent;
+            color: #eedb00;
+        }
+
+        .ravenclaw {
+            /* background: linear-gradient(135deg, rgba(0, 56, 147, 0.9), rgba(173, 216, 230, 0.9)); */
+            background: transparent;
+            color: #a2e2dd;
+        }
+
+        .slytherin {
+            /* background: linear-gradient(135deg, rgba(26, 71, 42, 0.9), rgba(192, 192, 192, 0.9)); */
+            background: transparent;
+            color: #90db72;
+        }
+
+        @keyframes housePulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        .house-name {
+            font-size: 13px;
+            margin-top: 2px;
+            font-weight: 1000;
+        }
+
+        /* Floating Hogwarts Elements */
+        .hogwarts-element {
+            position: absolute;
+            font-size: 18px;
+            animation: magicalFloat 8s ease-in-out infinite;
+            opacity: 0.4;
+        }
+
+        @keyframes magicalFloat {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+                opacity: 0.4;
+            }
+
+            33% {
+                transform: translateY(-15px) rotate(5deg) scale(1.1);
+                opacity: 0.6;
+            }
+
+            66% {
+                transform: translateY(-25px) rotate(-5deg) scale(0.9);
+                opacity: 0.5;
+            }
+        }
+
+        /* Magical Particles */
+        .magical-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: sparkle 3s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+
+        .floating-phrase {
+            position: absolute;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(212, 175, 55, 0.7);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            animation: phraseFloat 10s ease-in-out infinite;
+            opacity: 0.6;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        @keyframes phraseFloat {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg) scale(0.8);
+                opacity: 0.3;
+            }
+
+            25% {
+                transform: translateY(-25px) rotate(2deg) scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translateY(-40px) rotate(-2deg) scale(1.1);
+                opacity: 0.9;
+            }
+
+            75% {
+                transform: translateY(-20px) rotate(1deg) scale(0.9);
+                opacity: 0.7;
+            }
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #d4af37, #ffd700, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #c0c0c0;
+            font-weight: 400;
+        }
+
+        /* Step Cards */
+        .step-card {
+            background: linear-gradient(145deg, rgba(26, 26, 62, 0.9), rgba(45, 27, 78, 0.9));
+            border: 2px solid #d4af37;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .step-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        .step-icon-house {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .step-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #d4af37;
+        }
+
+        .step-description {
+            font-size: 1.1rem;
+            color: #c0c0c0;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .magical-button {
+            background: linear-gradient(45deg, #d4af37, #ffd700);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a3e;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .magical-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .magical-button:active {
+            transform: translateY(0);
+        }
+
+        .magical-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .magical-button:hover::before {
+            left: 100%;
+        }
+
+        /* File Upload */
+        .file-upload {
+            position: relative;
+            display: inline-block;
+        }
+
+        .file-input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        /* Progress Bar - Fixed positioning */
+        .progress-container {
+            position: fixed;
+            /* Change back to fixed */
+            left: 500px;
+            /* Position on right side */
+            top: 60%;
+            /* Center vertically */
+            transform: translateY(-50%);
+            /* Perfect vertical centering */
+            width: 80px;
+            /* Reduce width for vertical layout */
+            max-width: none;
+            /* Remove max-width */
+            margin: 0;
+            /* Remove margin */
+            z-index: 20;
+        }
+
+        .progress-bar {
+            background: rgba(26, 26, 62, 0.9);
+            border: 2px solid #d4af37;
+            border-radius: 25px;
+            padding: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .progress-steps {
+            display: flex;
+            flex-direction: column;
+            /* Change to column for vertical */
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+            /* Remove bottom margin */
+            height: 300px;
+            /* Set fixed height for vertical spacing */
+        }
+
+        .progress-step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .progress-step.active {
+            background: #d4af37;
+            color: #1a1a3e;
+            animation: glow 2s infinite;
+        }
+
+        .progress-step.completed {
+            background: #4CAF50;
+            color: white;
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+            }
+        }
+
+        .progress-line {
+            flex: 1;
+            width: 2px;
+            /* Change width instead of height */
+            height: auto;
+            /* Remove fixed height */
+            background: rgba(212, 175, 55, 0.3);
+            margin: 5px 0;
+            /* Change margin to vertical */
+            position: relative;
+        }
+
+        .progress-line.completed::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #d4af37;
+            animation: progressFill 0.5s ease;
+        }
+
+        @keyframes progressFill {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .loading-spell {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(212, 175, 55, 0.3);
+            border-top: 4px solid #d4af37;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Data Display */
+        .data-display {
+            background: rgba(26, 26, 62, 0.7);
+            border: 1px solid #d4af37;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .data-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+        }
+
+        .data-label {
+            font-weight: 600;
+            color: #d4af37;
+        }
+
+        .data-value {
+            color: #c0c0c0;
+            margin-left: 10px;
+        }
+
+        .extracted-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            border: 2px solid #d4af37;
+            margin: 10px 0;
+        }
+
+        /* Camera Section */
+        .camera-container {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        #video {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .camera-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            border: 3px solid #d4af37;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        /* Result Display */
+        .result {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .result.success {
+            background: linear-gradient(45deg, rgba(76, 175, 80, 0.2), rgba(76, 175, 80, 0.1));
+            border: 2px solid #4CAF50;
+            color: #4CAF50;
+        }
+
+        .result.failure {
+            background: linear-gradient(45deg, rgba(244, 67, 54, 0.2), rgba(244, 67, 54, 0.1));
+            border: 2px solid #f44336;
+            color: #f44336;
+        }
+
+        /* Hidden class */
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+
+            .step-card {
+                padding: 30px 20px;
+            }
+
+            .progress-container {
+                width: 250px;
+            }
+        }
